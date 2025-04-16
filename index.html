@@ -3,163 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status de Herramientas y Glosario</title>
+    <title>Status de Productos</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            color: #333;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
-        header {
-            background-color: #333;
-            color: white;
-            padding: 15px;
+        .container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-sizing: border-box;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .glossary, .status, .nextgen, .menu-nextgen, .nextgen-hex, .bypass {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .glossary p, .status p, .nextgen p, .menu-nextgen p, .nextgen-hex p, .bypass p {
+            font-size: 0.9rem;
+            margin: 0;
+            text-align: center;
+            width: 100%;
+        }
+        .status-item, .nextgen-item, .menu-item, .hex-item, .bypass-item {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            width: auto;
+        }
+        .status-item.green { background: #d4edda; }
+        .status-item.yellow { background: #fff3cd; }
+        .status-item.red { background: #f8d7da; }
+        .status-item .emoji {
+            font-size: 1.2rem;
+        }
+        .status-item .label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .glossary, .status, .nextgen, .menu-nextgen, .nextgen-hex, .bypass {
+            width: 100%;
             text-align: center;
         }
-        h1, h2 {
-            margin: 20px 0;
-        }
-        .glosario, .semaforo, .productos {
-            margin: 20px;
-        }
-        .semaforo span {
-            padding: 5px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white;
-        }
-        .verde { background-color: green; }
-        .amarillo { background-color: orange; }
-        .rojo { background-color: red; }
-        .producto {
-            background-color: #fff;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ddd;
-        }
-        .producto h3 {
-            margin: 0;
-        }
-        .semaforo-status {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-        .status {
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-weight: bold;
-            color: white;
+        .status-item, .nextgen-item, .menu-item, .hex-item, .bypass-item {
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Información de Herramientas y Status</h1>
-    </header>
+    <div class="container">
+        <h1>🌎 Glosario</h1>
+        <div class="glossary">
+            <p><strong>(In Game)</strong> EN JUEGO</p>
+            <p><strong>(Training)</strong> ENTRENAMIENTO</p>
+            <p><strong>(Anywhere)</strong> EN CUALQUIER LUGAR</p>
+            <p><strong>(Login)</strong> INICIO DE SESIÓN</p>
+            <p><strong>(Safe)</strong> Seguro</p>
+            <p><strong>(Testing)</strong> Testeando</p>
+            <p><strong>(OFF)</strong> APAGADO</p>
+            <p><strong>*SAFE:</strong> 🟢 / <strong>TESTING:</strong> 🟡 / <strong>OFF:</strong> 🔴</p>
+        </div>
 
-    <section class="glosario">
-        <h2>🌎 Glosario:</h2>
-        <ul>
-            <li><strong>(In Game)</strong> EN JUEGO</li>
-            <li><strong>(Training)</strong> ENTRENAMIENTO</li>
-            <li><strong>(Anywhere)</strong> EN CUALQUIER LUGAR</li>
-            <li><strong>(Login)</strong> INICIO DE SESIÓN</li>
-            <li><strong>(Safe)</strong> Seguro</li>
-            <li><strong>(Testing)</strong> Testeando</li>
-            <li><strong>(OFF)</strong> APAGADO</li>
-        </ul>
-        <p><strong>SAFE:</strong> 🟢 / <strong>TESTING:</strong> 🟡 / <strong>OFF:</strong> 🔴</p>
-    </section>
+        <h2>📌 NextGen</h2>
+        <div class="nextgen">
+            <div class="nextgen-item green">🟢 Aimbot Neck (In Game)</div>
+            <div class="nextgen-item green">🟢 Aimbot Legit (In Game)</div>
+            <div class="nextgen-item green">🟢 Aimbot Pecho (Training)</div>
+            <div class="nextgen-item yellow">🟡 AimscopeSnipers (Training)</div>
+            <div class="nextgen-item yellow">🟡 Quick change AWM (Training)</div>
+            <div class="nextgen-item green">🟢 Fake Lag V1 (Anywhere)</div>
+            <div class="nextgen-item green">🟢 Fake Lag V2 (Anywhere)</div>
+            <div class="nextgen-item green">🟢 Chams (Anywhere)</div>
+        </div>
 
-    <section class="productos">
-        <h2>📌 NextGen:</h2>
-        <div class="producto">
-            <h3>˹🟢˼｜Aimbot Neck</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Juego</span></p>
+        <h2>📌 MenuNextGen</h2>
+        <div class="menu-nextgen">
+            <div class="menu-item green">🟢 Chams [Wukong, Naruto, Glow Outline V2, HDRs, Glow PRO X] (Anywhere)</div>
+            <div class="menu-item green">🟢 Scope AWM [ff max] (Training)</div>
+            <div class="menu-item green">🟢 Quickchange AWM [ff max] (Training)</div>
+            <div class="menu-item green">🟢 Camara Derecha (Training)</div>
+            <div class="menu-item green">🟢 FakeLag: V1, PERSO, GH [ff max] (Training)</div>
         </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Aimbot Legit</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Juego</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Aimbot Pecho</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟡˼｜AimscopeSnipers</h3>
-            <p><strong>Estado:</strong> <span class="semaforo amarillo">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟡˼｜Quick change AWM</h3>
-            <p><strong>Estado:</strong> <span class="semaforo amarillo">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Fake Lag V1</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Fake Lag V2</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Chams</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
-        </div>
-    </section>
 
-    <section class="productos">
-        <h2>📌 MenuNextGen:</h2>
-        <div class="producto">
-            <h3>˹🟢˼｜Chams [Wukong, Naruto, Glow Outline V2]</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
+        <h2>📌 NextGen Hex</h2>
+        <div class="nextgen-hex">
+            <div class="hex-item green">🟢 AimHex (Anywhere)</div>
+            <div class="hex-item green">🟢 ESP LINE (Anywhere)</div>
+            <div class="hex-item green">🟢 Chams (Anywhere)</div>
         </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Scope AWM [ff max]</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Quickchange AWM [ff max]</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Camara Derecha</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Entrenamiento</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜FakeLag: V1, PERSO, GH [ff max]</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Entrenamiento</span></p>
-        </div>
-    </section>
 
-    <section class="productos">
-        <h2>📌 NextGen Hex:</h2>
-        <div class="producto">
-            <h3>˹🟢˼｜AimHex</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
+        <h2>📌 BYPASS</h2>
+        <div class="bypass">
+            <div class="bypass-item green">🟢 BYPASS XG (Automático)</div>
+            <div class="bypass-item red">🔴 BYPASS NextGen (Login)</div>
         </div>
-        <div class="producto">
-            <h3>˹🟢˼｜ESP LINE</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🟢˼｜Chams</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">En Cualquier Lugar</span></p>
-        </div>
-    </section>
-
-    <section class="productos">
-        <h2>📌 BYPASS:</h2>
-        <div class="producto">
-            <h3>˹🟢˼ BYPASS XG</h3>
-            <p><strong>Estado:</strong> <span class="semaforo verde">Automático</span></p>
-        </div>
-        <div class="producto">
-            <h3>˹🔴˼ BYPASS NextGen</h3>
-            <p><strong>Estado:</strong> <span class="semaforo rojo">Inicio de Sesión</span></p>
-        </div>
-    </section>
+    </div>
 </body>
 </html>
