@@ -1,236 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NextGen Status Panel</title>
+  <meta charset="UTF-8">
+  <title>Reset de Licencia - Fluxauth</title>
   <style>
-    * {
-      scroll-behavior: smooth;
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #121212;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    .panel {
-      width: 100%;
-      max-width: 1200px;
-      padding: 20px;
-      background-color: #1e1e1e;
-      border-radius: 8px;
-    }
-
-    .header {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      gap: 10px;
-    }
-
-    .toggle-glosario {
-      background-color: #333;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    .toggle-glosario:hover {
-      background-color: #444;
-    }
-
-    .search-box {
-      width: 100%;
-      padding: 8px 12px;
-      border-radius: 4px;
-      border: none;
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .columns {
-      display: flex;
-      gap: 20px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-      align-items: flex-start;
-    }
-
-    .column {
-      flex: 1;
-      min-width: 300px;
-      transition: transform 0.3s ease;
-    }
-
-    h2 {
-      margin-top: 30px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 5px;
-      font-size: 1.4em;
-    }
-
-    .item {
-      margin: 5px 0;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-
-    .item:hover {
-      background-color: #333;
-      transform: scale(1.05);
-    }
-
-    .item .status-indicator {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      transition: background-color 0.3s ease;
-    }
-
-    /* Efectos de animación */
-    .column > .item {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    .column > .item.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsividad para dispositivos móviles */
-    @media (max-width: 768px) {
-      .columns {
-        flex-direction: column;
-      }
-    }
+    body { font-family: Arial; padding: 20px; }
+    input, button { padding: 8px; margin-top: 10px; width: 100%; }
+    pre { background: #f0f0f0; padding: 10px; margin-top: 15px; }
   </style>
 </head>
 <body>
-  <div class="panel">
-    <div class="header">
-      <input type="text" class="search-box" placeholder="🔍 Buscar Función..." onkeyup="filtrarItems(this.value)">
-      <button class="toggle-glosario" onclick="toggleIdioma()">🌐 EN/ES </button>
-    </div>
+  <h2>Resetear Licencia - Fluxauth</h2>
+  <form id="resetForm">
+    <label for="license_key">Clave de licencia:</label>
+    <input type="text" id="license_key" required placeholder="Ej: ABCD-1234-EFGH-5678">
+    <button type="submit">Resetear Licencia</button>
+  </form>
 
-    <div class="columns">
-      <div class="column" id="left-column">
-        <h2>📌 NextGen (Premium)</h2>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Aimbot Neck (In Game)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Aimbot Legit (In Game)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Camara Side (Training)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Scope Snipers (Training)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Quick change AWM (Training)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Fake Lag V1 (Anywhere)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Fake Lag: GH, TP. (Anywhere)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Chams (Anywhere)
-        </div>
-
-        <h2>📌 NextGen (Basic)</h2>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Chams [Wukong, Naruto, Glow Outline V2, HDRs, Glow PRO X] (Anywhere)
-        </div>
-        
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> FakeLag: V1 (Manual/Automatico). (Training)
-        </div>
-      </div>
-
-      <div class="column" id="right-column">
-        <h2>📌 NextGen Hex</h2>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Aimbot; Hex, Assint (Anywhere)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> ESP LINE (Anywhere)
-        </div>
-        <div class="item" data-status="🟢">
-          <span class="status-indicator" style="background-color: green;"></span> Glow Pro X (Anywhere)
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <pre id="response"></pre>
 
   <script>
-    let idioma = 'en';
+    document.getElementById('resetForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const licenseKey = document.getElementById('license_key').value;
+      const responseBox = document.getElementById('response');
 
-    const traduccionParentesis = {
-      'In Game': 'En Juego',
-      'Training': 'Entrenamiento',
-      'Anywhere': 'En cualquier lugar',
-      'Login': 'Inicio de sesión',
-      'En Juego': 'In Game',
-      'Entrenamiento': 'Training',
-      'En cualquier lugar': 'Anywhere',
-      'Inicio de sesión': 'Login'
-    };
+      try {
+        const response = await fetch('https://api.fluxauth.com/licenses/reset', {
+          method: 'POST',
+          headers: {
+            'Authorization': 'Bearer sk-ln928o5kvci2d9l5299vmkt2',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ license_key: licenseKey })
+        });
 
-    function toggleIdioma() {
-      const items = document.querySelectorAll('.item');
-      items.forEach(item => {
-        let texto = item.innerHTML;
-        const match = texto.match(/\(([^)]+)\)/);
-        if (match && match[1]) {
-          const original = match[1];
-          const traduccion = traduccionParentesis[original];
-          if (traduccion) {
-            const nuevoTexto = texto.replace(`(${original})`, `(${traduccion})`);
-            item.innerHTML = nuevoTexto;
-          }
-        }
-      });
-      idioma = idioma === 'en' ? 'es' : 'en';
-    }
-
-    function filtrarItems(filtro) {
-      const items = document.querySelectorAll('.item');
-      filtro = filtro.toLowerCase();
-      items.forEach(item => {
-        item.style.display = item.textContent.toLowerCase().includes(filtro) ? '' : 'none';
-      });
-    }
-
-    // Animación al cargar los items
-    window.addEventListener('load', () => {
-      const items = document.querySelectorAll('.column > .item');
-      items.forEach((item, index) => {
-        setTimeout(() => {
-          item.classList.add('visible');
-        }, index * 100);
-      });
+        const result = await response.json();
+        responseBox.textContent = JSON.stringify(result, null, 2);
+      } catch (error) {
+        responseBox.textContent = 'Error: ' + error.message;
+      }
     });
   </script>
 </body>
