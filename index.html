@@ -207,7 +207,7 @@
           const original = match[1];
           const traduccion = traduccionParentesis[original];
           if (traduccion) {
-            const nuevoTexto = texto.replace((${original}), (${traduccion}));
+            const nuevoTexto = texto.replace(`(${original})`, `(${traduccion})`);
             item.innerHTML = nuevoTexto;
           }
         }
